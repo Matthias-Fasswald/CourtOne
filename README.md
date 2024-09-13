@@ -1,2 +1,2 @@
 # CourtOne
-The Court is Yours - Whenever You Are
+The Court is Yours - Wherever You Are
