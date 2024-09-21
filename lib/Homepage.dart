@@ -1,6 +1,7 @@
 // Homepage.dart
 import 'package:flutter/material.dart';
 import 'BackgroundWidget.dart';
+import 'ProfilePage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -40,7 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _selectedMenu = selected;
       });
-
+      if (selected == "Benutzerprofil") {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ProfilePage()), // Navigiere zur Profilseite
+        );
+      }
       // Navigation hinzufügen
     }
   }
@@ -51,22 +57,28 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(title: Text(widget.title)),
       body: BackgroundWidget(
         child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                const Text("Menu", style: TextStyle(fontSize: 18, color: Colors.white)),
-                const SizedBox(height: 20),
-                DropdownButton<String>(
-                  value: _selectedMenu,
-                  onChanged: _onMenuSelected,
-                  items: dropdownItems,
-                  isExpanded: true,
-                  dropdownColor: Colors.grey,
-                  style: const TextStyle(color: Colors.black, fontSize: 16),
-                  icon: const Icon(Icons.arrow_downward, color: Colors.white),
-                ),
-              ],
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text(
+                    "Menu",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                  const SizedBox(height: 20),
+                  DropdownButton<String>(
+                    value: _selectedMenu,
+                    onChanged: _onMenuSelected, // Menüauswahl behandeln
+                    items: dropdownItems,
+                    isExpanded: true, // Lässt das Dropdown den ganzen Platz nutzen
+                    dropdownColor: Colors.grey, // Farbe des Dropdowns
+                    style: const TextStyle(color: Colors.black, fontSize: 16),
+                    icon: const Icon(Icons.arrow_downward), // Dropdown-Pfeil
+                  ),
+                ],
+              ),
             ),
           ),
         ),
