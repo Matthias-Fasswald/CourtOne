@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "741845314844",
+    "project_id": "courtone-16e1d",
+    "storage_bucket": "courtone-16e1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741845314844:android:f79efea716726900a45ed9",
+        "android_client_info": {
+          "package_name": "com.example.courtone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkKk8bl5MyWQppzPECX74aiUttIH3VfjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
